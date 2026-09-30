@@ -2,7 +2,7 @@
 
 This project prepares DeepPCB and PKU-Market-PCB for six-class PCB defect classification. The current work covers data understanding and Stage 2 preprocessing. The resulting metadata and images are ready for Stage 3 model training.
 
-## Project Structure
+## Current Structure
 
 ```text
 .
