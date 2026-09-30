@@ -2,7 +2,7 @@
 
 This project prepares DeepPCB and PKU-Market-PCB for six-class PCB defect classification. The current work covers data understanding and Stage 2 preprocessing. The resulting metadata and images are ready for Stage 3 model training.
 
-## Project Structure
+## Current Structure
 
 ```text
 .
@@ -64,7 +64,7 @@ The notebook keeps the exploratory analysis separate from the reusable preproces
 
 ## Stage 2 Preprocessing
 
-Run `Data_Preprocessing.ipynb` from the project root. The notebook calls `src.preprocessing.run_preprocessing()` and then validates the generated output.
+Run `Data_Preprocessing.ipynb` from the project root only when regenerating Stage 2 from raw datasets. The notebook calls `src.preprocessing.run_preprocessing()` and then validates the generated output.
 
 The pipeline:
 
@@ -125,4 +125,17 @@ Stage 3 can load `preprocessing_metadata.csv`, filter by `split`, read `output_i
 
 The `dataset` column should be retained during evaluation so results can be reported for the combined test set and separately for DeepPCB and PKU-Market-PCB.
 
-Raw datasets and generated image folders are local data artifacts and are ignored by Git. Team members need access to the raw datasets or a shared copy of `preprocessed_data/` before running Stage 2 or Stage 3.
+## Clone and Run Stage 3
+
+Processed images and metadata are tracked with Git LFS, so Stage 3 does not require downloading the raw datasets. Install Git LFS once, then clone the repository:
+
+```powershell
+git lfs install
+git clone https://github.com/Phamlong2675/Deep-Learning-PCB-Defect-Detection.git
+cd Deep-Learning-PCB-Defect-Detection
+git lfs pull
+```
+
+After installing Python dependencies, Stage 3 can read `preprocessed_data/preprocessing_metadata.csv` and the images under `preprocessed_data/` directly.
+
+Raw datasets are still ignored by Git. They are only required when rerunning Data Understanding or regenerating Stage 2.

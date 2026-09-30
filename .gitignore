@@ -11,7 +11,5 @@ __pycache__/
 .complete/
 
 # Large local datasets and generated images
-DeepPCB/
-PKU-Market-PCB(Data enhanced version)/
-preprocessed_data/DeepPCB/
-preprocessed_data/PKU-Market-PCB/
+/DeepPCB/
+/PKU-Market-PCB(Data enhanced version)/
